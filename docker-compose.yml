@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  tomcat:
+    build: ./tomcat
+    image: tomcat2
+    container_name: tomcat2
+    volumes:
+      - ./tomcat/share/logs:/share/logs
+  
+  nginx:
+    build: ./nginx
+    image: nginx2
+    container_name: nginx2
+    ports:
+      - 10081:80
